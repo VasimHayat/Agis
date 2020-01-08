@@ -14,16 +14,20 @@
 </head>
 
 <body>
-    <h1 id="h1">Hello Agis</h1><br>
+    <h1 id="h" class="test">VVV</h1><br>
+    <h1 id="h1" class="h">Hello Agis</h1><br>
     <button onclick="removeClass()">Remove Class</button>
     <button onclick="addClass()">Add Class</button>
     <script>
+        console.log(Agis("h1"))
+
         function removeClass() {
-            Agis("h1").removeClass("bg-red");
+            Agis(".h").removeClass("bg-red");
         }
 
         function addClass() {
-            Agis("h1").addClass("bg-red");
+            Agis(".h").addClass("bg-red");
+            console.log(Agis(".h").hasClass("h"))
         }
     </script>
 </body>
