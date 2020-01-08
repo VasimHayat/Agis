@@ -4,7 +4,7 @@
   "authors": [
     "Vasim Hayat"
   ],
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "Agis is Lightweight dom mainuplation library",
   "scripts": {
     "tsc": "tsc",

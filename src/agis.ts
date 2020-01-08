@@ -1,6 +1,7 @@
 class AgisLibrary {
     private _element: (HTMLElement | null);
 
+
     addClass = (classList: string) => {
         this._element.classList.add(classList);
         return this;
