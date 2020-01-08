@@ -43,7 +43,7 @@ npm i agis
 
 If you like it or prefer to try it locally, just download `agis.js`:
 
-[**Download Umbrella JS**](https://raw.githubusercontent.com/VasimHayat/Agis/master/dist/agis.js)
+[**Download Agis JS**](https://raw.githubusercontent.com/VasimHayat/Agis/master/dist/agis.js)
 
 Add it to your project:
 
