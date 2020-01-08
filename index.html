@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agis Demo</title>
+    <script src="dist/agis.js"></script>
+    <style>
+        .bg-red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="h1">Hello Agis</h1><br>
+    <button onclick="removeClass()">Remove Class</button>
+    <button onclick="addClass()">Add Class</button>
+    <script>
+        function removeClass() {
+            Agis("h1").removeClass("bg-red");
+        }
+
+        function addClass() {
+            Agis("h1").addClass("bg-red");
+        }
+    </script>
+</body>
+
+</html>

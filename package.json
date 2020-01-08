@@ -1,0 +1,24 @@
+{
+  "name": "agis",
+  "author": "Vasim Hayat",
+  "version": "1.0.0",
+  "description": "Agis is light weight dom mainuplation library",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "lite": "lite-server",
+    "postinstall": "typings install"
+  },
+  "keywords": [
+    "agis",
+    "dom",
+    "js"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^5.0.2",
+    "lite-server": "^2.5.4",
+    "typescript": "^3.7.4"
+  }
+}
