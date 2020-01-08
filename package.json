@@ -2,6 +2,7 @@
   "name": "agis",
   "author": "Vasim Hayat",
   "version": "1.0.0",
+  "publisher": "https://github.com/VasimHayat/Agis",
   "description": "Agis is light weight dom mainuplation library",
   "scripts": {
     "tsc": "tsc",
