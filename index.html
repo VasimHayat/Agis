@@ -22,11 +22,11 @@
         console.log(Agis("h1"))
 
         function removeClass() {
-            Agis(".h").removeClass("bg-red");
+            Agis(document.getElementById("h1")).removeClass("bg-red");
         }
 
         function addClass() {
-            Agis(".h").addClass("bg-red");
+            Agis("h1").addClass("bg-red");
             console.log(Agis(".h").hasClass("h"))
         }
     </script>

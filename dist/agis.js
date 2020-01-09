@@ -2,22 +2,48 @@ var AgisLibrary = /** @class */ (function () {
     function AgisLibrary() {
         var _this = this;
         this.init = function (selector) {
-            _this.isIdSelector = _this.isId(selector);
-            if (_this.isIdSelector) {
+            if (!selector)
+                return;
+            _this.isIdSelector = _this.isIdElement(selector);
+            if (selector === 'document') {
+                return;
+                //this.elements = [document];
+            }
+            else if (selector === 'window') {
+                return;
+                // this.elements = [window];
+            }
+            else if (_this.isIdSelector) {
                 selector = selector.substr(1, selector.length);
                 _this.element = document.getElementById(selector);
+            }
+            else if (_this.isClsElement(selector)) {
+                selector = selector.substr(1, selector.length);
+                _this.elements = document.getElementsByClassName(selector);
+            }
+            else if (_this.isNodeElement(selector)) {
+                _this.elements = [selector];
             }
             else {
                 _this.elements = document.querySelectorAll(selector);
             }
             return _this;
         };
+        this.each = function (obj, callback) {
+            var isArr = Array.isArray(obj), keys = Object.keys(obj), len = keys.length;
+            for (var i = 0; i < len; i++) {
+                if (callback.call(obj[keys[i]], isArr ? parseInt(keys[i]) : keys[i], obj[keys[i]]) === false) {
+                    break; // stop if callback returns false
+                }
+            }
+            return obj;
+        };
         this.addClass = function (classList) {
             if (_this.isIdSelector) {
                 _this.element.classList.add(classList);
             }
             else {
-                _this.elements.forEach(function (ele) {
+                _this.each(_this.elements, function (index, ele) {
                     ele.classList.add(classList);
                 });
             }
@@ -28,7 +54,7 @@ var AgisLibrary = /** @class */ (function () {
                 _this.element.classList.remove(classList);
             }
             else {
-                _this.elements.forEach(function (ele) {
+                _this.each(_this.elements, function (index, ele) {
                     ele.classList.remove(classList);
                 });
             }
@@ -57,8 +83,14 @@ var AgisLibrary = /** @class */ (function () {
     AgisLibrary.prototype.startsWith = function (stringVal, key) {
         return stringVal.substr(0, 1) == key;
     };
-    AgisLibrary.prototype.isId = function (selector) {
-        return this.startsWith(selector, "#");
+    AgisLibrary.prototype.isIdElement = function (selector) {
+        return typeof selector == "string" && this.startsWith(selector, "#");
+    };
+    AgisLibrary.prototype.isClsElement = function (selector) {
+        return typeof selector == "string" && this.startsWith(selector, ".");
+    };
+    AgisLibrary.prototype.isNodeElement = function (selector) {
+        return selector && selector.nodeName;
     };
     return AgisLibrary;
 }());
