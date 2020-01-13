@@ -1,5 +1,5 @@
 You probably need awesome and lightweight, modern and performant javascript library. This does:
-
+    inspired by umbrela js and Jquery
 - DOM traversal (selector, filter, find, each, etc.)
 - DOM editing (classes & attributes, html, before, etc.)
 
